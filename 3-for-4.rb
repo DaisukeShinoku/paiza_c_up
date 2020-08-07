@@ -4,8 +4,8 @@
 
 n = gets.to_i
 c = n.times.map{gets.chomp}
-# m = gets.to_i
-# s = m.times.map{gets.chomp}
-s = gets.chomp
+m = gets.to_i
+s = m.times.map{gets.chomp}
+# s = gets.chomp
 
-puts c.any?{ |t| s.include?(t) }
+confirm = c.any?{ |t| s.include?(t) }
