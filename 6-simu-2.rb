@@ -5,3 +5,19 @@
 
 # 手続きが終わったときのパイザ君の操作回数を求めてください。
 
+n = gets.to_i
+input = gets.chomp.split(" ", 2)
+a = input[0].to_i
+b = input[1].to_i
+
+paiza = 1
+kyoko = 1
+count = 0
+
+until kyoko > n do
+  kyoko += paiza * a
+  paiza += kyoko % b
+  count += 1
+end
+
+puts count

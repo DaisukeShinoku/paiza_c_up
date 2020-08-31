@@ -1,16 +1,12 @@
-input = gets.chomp.split(" ", 3)
+n = gets.to_i
 
-N = input[0].to_i
+arrays = n.times.map{gets.chomp.split(" ", 3)}
 
-M = input[1].to_i
 
-K = input[2].to_i
-
-arrays = N.times.map{gets.chomp.split(" ", M)}
-
-i = 0
-until i >= N
-  count = arrays[i].count(K.to_s)
-  puts count
-  i += 1
+fot i in arrays do
+  t = arrays[0]
+  h = arrays[1]
+  m = arrays[2]
 end
+
+puts t

@@ -6,6 +6,7 @@
 
 n = gets.to_i
 s = n.times.map{gets.chomp}
+s = s.sort
 
 m = gets.to_i
 arrays = m.times.map{gets.split(" ", 2)}
@@ -14,16 +15,14 @@ change = []
 arrays.each{|array| change << [array[0], array[1].to_i]}
 hash =  change.group_by(&:first).map{|k, v| [k, v.sum(&:last)]}.to_h
 
-S = gets.chomp
+i = 0
 
-if hash.key?(S)
-  ans =  hash.fetch_values(S)
-else
-  ans = 0
-end
-
-if ans == nil
-  puts 0
-else
-  puts ans
+until i >= s.length
+  if hash.has_key?(s[i])
+    ans = hash.find{|k,v| k == s[i]}
+    puts "#{ans[1]}"
+  else
+    puts 0
+  end
+  i += 1
 end

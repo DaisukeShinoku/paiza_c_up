@@ -5,6 +5,28 @@
 # 工事が終わる時刻を 00:00 から 23:59 までの 24 時間表記で出力してください
 # （ここで「工事が終わる時刻」とは、工事が h 時間 m 分続くとした場合、工事が始まった時刻の h 時間 m 分後を指します）。
 
-N = gets.to_i
-arrays = N.times.map{gets.split(" ", 3)}
-p arrays
+# (1..gets.to_i).each {
+#   t, h, m = gets.split(" ")
+#   th, tm = t.split(":")
+
+#   rh = th.to_i + h.to_i
+#   rm = tm.to_i + m.to_i
+#   printf("%02d:%02d\n", (rh + rm / 60) % 24, rm % 60)
+# }
+
+n = gets.to_i
+
+arrays = n.times.map{gets.chomp.split(" ", 3)}
+
+t = arrays[0]
+h = arrays[1]
+m = arrays[2]
+
+puts t
+
+th, tm = t.split(":")
+
+rh = th.to_i + h.to_i
+rm = tm.to_i + m.to_i
+
+printf("%02d:%02d\n", (rh + rm / 60) % 24, rm % 60)
